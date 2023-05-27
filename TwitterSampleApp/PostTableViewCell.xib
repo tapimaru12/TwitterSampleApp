@@ -16,11 +16,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jik-Gr-9LH">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jik-Gr-9LH">
                         <rect key="frame" x="5" y="5" width="310" height="85"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ユーザー名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gql-nT-O5a">
-                                <rect key="frame" x="0.0" y="0.0" width="310" height="62"/>
+                                <rect key="frame" x="0.0" y="0.0" width="310" height="57"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
