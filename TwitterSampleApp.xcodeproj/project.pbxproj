@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BA334B52A2215BB0013291F /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA334B42A2215BB0013291F /* PlaceHolderTextView.swift */; };
 		2BAAACE12A1D0896005DB61B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAACE02A1D0896005DB61B /* AppDelegate.swift */; };
 		2BAAACE32A1D0896005DB61B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAACE22A1D0896005DB61B /* SceneDelegate.swift */; };
 		2BAAACE52A1D0896005DB61B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAACE42A1D0896005DB61B /* HomeViewController.swift */; };
@@ -19,6 +20,7 @@
 		2BAAAD112A1D0932005DB61B /* PostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAAD102A1D0932005DB61B /* PostDataModel.swift */; };
 		2BAAAD142A1D0A92005DB61B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAAD122A1D0A92005DB61B /* PostTableViewCell.swift */; };
 		2BAAAD152A1D0A92005DB61B /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BAAAD132A1D0A92005DB61B /* PostTableViewCell.xib */; };
+		2BB629692A20D3B300B38F87 /* CreateNewPostVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB629682A20D3B300B38F87 /* CreateNewPostVIewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BA334B42A2215BB0013291F /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		2BAAACDD2A1D0896005DB61B /* TwitterSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BAAACE02A1D0896005DB61B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BAAACE22A1D0896005DB61B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		2BAAAD102A1D0932005DB61B /* PostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataModel.swift; sourceTree = "<group>"; };
 		2BAAAD122A1D0A92005DB61B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		2BAAAD132A1D0A92005DB61B /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		2BB629682A20D3B300B38F87 /* CreateNewPostVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPostVIewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				2BAAAD102A1D0932005DB61B /* PostDataModel.swift */,
 				2BAAAD122A1D0A92005DB61B /* PostTableViewCell.swift */,
 				2BAAAD132A1D0A92005DB61B /* PostTableViewCell.xib */,
+				2BB629682A20D3B300B38F87 /* CreateNewPostVIewController.swift */,
+				2BA334B42A2215BB0013291F /* PlaceHolderTextView.swift */,
 			);
 			path = TwitterSampleApp;
 			sourceTree = "<group>";
@@ -272,7 +278,9 @@
 				2BAAACE12A1D0896005DB61B /* AppDelegate.swift in Sources */,
 				2BAAAD142A1D0A92005DB61B /* PostTableViewCell.swift in Sources */,
 				2BAAACE32A1D0896005DB61B /* SceneDelegate.swift in Sources */,
+				2BA334B52A2215BB0013291F /* PlaceHolderTextView.swift in Sources */,
 				2BAAAD112A1D0932005DB61B /* PostDataModel.swift in Sources */,
+				2BB629692A20D3B300B38F87 /* CreateNewPostVIewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
