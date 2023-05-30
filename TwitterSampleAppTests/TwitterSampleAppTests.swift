@@ -8,6 +8,7 @@
 import XCTest
 @testable import TwitterSampleApp
 
+
 final class TwitterSampleAppTests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -24,6 +25,9 @@ final class TwitterSampleAppTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        let createPostVC = CreateNewPostViewController()
+        let bool = createPostVC.checkTextCount(count: 1)
+        XCTAssertFalse(bool)
     }
 
     func testPerformanceExample() throws {
@@ -32,5 +36,4 @@ final class TwitterSampleAppTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }
