@@ -30,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="-777" y="-27"/>
         </scene>
-        <!--Home View Controller-->
+        <!--ホーム-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="TwitterSampleApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,7 +52,7 @@
                             <constraint firstItem="Z24-RP-QGf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="n4y-hQ-ZrX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5g1-tK-CJx"/>
+                    <navigationItem key="navigationItem" title="ホーム" id="5g1-tK-CJx"/>
                     <connections>
                         <outlet property="tableView" destination="Z24-RP-QGf" id="9Nb-nE-BOM"/>
                     </connections>
@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="25" y="-27"/>
         </scene>
-        <!--Create New Post View Controller-->
+        <!--新規作成-->
         <scene sceneID="q5Z-IZ-kG6">
             <objects>
-                <viewController storyboardIdentifier="createNewPostView" id="k21-p6-tHe" customClass="CreateNewPostViewController" customModule="TwitterSampleApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createNewPostView" title="新規作成" id="k21-p6-tHe" customClass="CreateNewPostViewController" customModule="TwitterSampleApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bOJ-9q-OHQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="718"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

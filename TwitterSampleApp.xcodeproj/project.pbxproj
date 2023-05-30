@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		19877158D3D2D7E688A34F32 /* Pods_TwitterSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 437A50F5140804616E9FC486 /* Pods_TwitterSampleApp.framework */; };
+		2B8CCC8B2A26576400CBF75E /* PostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAAD102A1D0932005DB61B /* PostDataModel.swift */; };
 		2BA334B52A2215BB0013291F /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA334B42A2215BB0013291F /* PlaceHolderTextView.swift */; };
 		2BAAACE12A1D0896005DB61B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAACE02A1D0896005DB61B /* AppDelegate.swift */; };
 		2BAAACE32A1D0896005DB61B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAACE22A1D0896005DB61B /* SceneDelegate.swift */; };
@@ -18,7 +19,6 @@
 		2BAAACF82A1D0899005DB61B /* TwitterSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAACF72A1D0899005DB61B /* TwitterSampleAppTests.swift */; };
 		2BAAAD022A1D0899005DB61B /* TwitterSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAAD012A1D0899005DB61B /* TwitterSampleAppUITests.swift */; };
 		2BAAAD042A1D0899005DB61B /* TwitterSampleAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAAD032A1D0899005DB61B /* TwitterSampleAppUITestsLaunchTests.swift */; };
-		2BAAAD112A1D0932005DB61B /* PostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAAD102A1D0932005DB61B /* PostDataModel.swift */; };
 		2BAAAD142A1D0A92005DB61B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAAD122A1D0A92005DB61B /* PostTableViewCell.swift */; };
 		2BAAAD152A1D0A92005DB61B /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BAAAD132A1D0A92005DB61B /* PostTableViewCell.xib */; };
 		2BB629692A20D3B300B38F87 /* CreateNewPostVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB629682A20D3B300B38F87 /* CreateNewPostVIewController.swift */; };
@@ -212,6 +212,7 @@
 				2BAAACEF2A1D0899005DB61B /* Sources */,
 				2BAAACF02A1D0899005DB61B /* Frameworks */,
 				2BAAACF12A1D0899005DB61B /* Resources */,
+				1BBA3306085AF7DA294AF361 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -332,6 +333,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TwitterSampleApp-TwitterSampleAppUITests/Pods-TwitterSampleApp-TwitterSampleAppUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1BBA3306085AF7DA294AF361 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TwitterSampleAppTests/Pods-TwitterSampleAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TwitterSampleAppTests/Pods-TwitterSampleAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TwitterSampleAppTests/Pods-TwitterSampleAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5330513677FFB5B8314514D0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -425,9 +443,9 @@
 				2BAAACE52A1D0896005DB61B /* HomeViewController.swift in Sources */,
 				2BAAACE12A1D0896005DB61B /* AppDelegate.swift in Sources */,
 				2BAAAD142A1D0A92005DB61B /* PostTableViewCell.swift in Sources */,
+				2B8CCC8B2A26576400CBF75E /* PostDataModel.swift in Sources */,
 				2BAAACE32A1D0896005DB61B /* SceneDelegate.swift in Sources */,
 				2BA334B52A2215BB0013291F /* PlaceHolderTextView.swift in Sources */,
-				2BAAAD112A1D0932005DB61B /* PostDataModel.swift in Sources */,
 				2BB629692A20D3B300B38F87 /* CreateNewPostVIewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,8 +630,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -641,8 +658,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

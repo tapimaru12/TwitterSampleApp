@@ -11,10 +11,12 @@ target 'TwitterSampleApp' do
   target 'TwitterSampleAppTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RealmSwift', '~>10'
   end
 
   target 'TwitterSampleAppUITests' do
     # Pods for testing
+    pod 'RealmSwift', '~>10'
   end
 
 end
