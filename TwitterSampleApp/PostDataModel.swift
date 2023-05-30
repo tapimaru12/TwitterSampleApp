@@ -1,6 +1,8 @@
 import Foundation
+import RealmSwift
 
-struct PostDataModel {
-    var userName: String
-    var postText: String
+class PostDataModel: Object {
+    @objc dynamic var id: String = UUID().uuidString
+    @objc dynamic var userName: String = ""
+    @objc dynamic var postText: String = ""
 }
