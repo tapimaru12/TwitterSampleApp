@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import RealmSwift
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -9,14 +10,22 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        postDataList.reverse()
         tableView.delegate = self
         tableView.dataSource = self
         // xibを登録
         tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "postCell")
-        setPostData()
         setFabLayout(fab: self.floatingButton)
         view.addSubview(floatingButton)
         floatingButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // データの取得
+        setPostData()
+        // 取得したデータをtableViewに反映させる
+        tableView.reloadData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -26,12 +35,13 @@ class HomeViewController: UIViewController {
                                       width: 60, height: 60)
     }
     
-    // 投稿リスト
+    // 投稿された全データをpostDataListに格納
     func setPostData() {
-        for i in 1...5 {
-            let postDataModel = PostDataModel(userName: "\(i)番目の人", postText: "HelloこんいちはHelloこんいちはHelloこんいちはHelloこんいちはHelloこんいちはHelloこんいちはHelloこんいちは")
-            postDataList.append(postDataModel)
-        }
+        let realm = try! Realm()
+        let result = realm.objects(PostDataModel.self)
+        postDataList = Array(result)
+        // 投稿を上から新しい順で表示するために配列を逆順にする
+        postDataList.reverse()
     }
     
     // フローティングボタンのレイアウト設定
@@ -44,7 +54,6 @@ class HomeViewController: UIViewController {
         fab.setImage(image, for: .normal)
         fab.tintColor = .white
     }
-    
     
     // フローティングボタンの動き
     @objc private func didTapButton() {
@@ -74,5 +83,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     // セルが選択された時の挙動
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    // セルをスワイプして削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let targetPost = postDataList[indexPath.row]
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(targetPost)
+        }
+        postDataList.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }

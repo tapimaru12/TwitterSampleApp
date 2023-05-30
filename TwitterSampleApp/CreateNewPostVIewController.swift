@@ -1,10 +1,19 @@
 import Foundation
 import UIKit
+import RealmSwift
 
 class CreateNewPostViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var postTextView: PlaceHolderTextView!
     @IBOutlet weak var wordCountLabel: UILabel!
+    
+    var postButton = UIBarButtonItem()
+    
+    var postData = PostDataModel()
+    
+    // 文字が入力されているか
+    var userNameHasText: Bool = false
+    var postTextHasText: Bool = false
     
     // userNameTextFieldのプレースホルダーの設定
     let attributes: [NSAttributedString.Key : Any] = [
@@ -14,6 +23,9 @@ class CreateNewPostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userNameTextField.delegate = self
+        postTextView.delegate = self
+        
         setUseNameLayout()
         setPostTextLayout()
         setWordCountLayout()
@@ -47,9 +59,20 @@ class CreateNewPostViewController: UIViewController {
     
     // ナビゲーションバーに投稿ボタンを追加
     func setNavigationBarButton() {
-        
-        let postButton = UIBarButtonItem(title: "投稿", style: .plain, target: self, action: nil)
+        postButton = UIBarButtonItem(title: "投稿", style: .plain, target: self, action: #selector(saveData))
         navigationItem.rightBarButtonItem = postButton
+        // 遷移直後は文字が入力されていないため投稿ボタンを無効化
+        postButton.isEnabled = false
+    }
+    
+    // 投稿ボタンの有効/無効を切り替える
+    func switchPostButton() {
+        // ユーザー名と投稿文の両方が空欄じゃない場合に、投稿ボタンを有効にする
+        if userNameHasText == true && postTextHasText == true {
+            postButton.isEnabled = true
+        } else {
+            postButton.isEnabled = false
+        }
     }
     
     // キーボードにCloseボタンを追加
@@ -65,5 +88,45 @@ class CreateNewPostViewController: UIViewController {
     @objc func tapCloseButton() {
         view.endEditing(true)
     }
+    
+    // Realmにデータを保存する
+    @objc func saveData() {
+        let realm = try! Realm()
+        // 下記2行、どちらか一つでも空欄の場合は投稿ボタンが無効になるため強制アンラップ
+        postData.userName = userNameTextField.text!
+        postData.postText = postTextView.text!
+        try! realm.write {
+            realm.add(postData)
+        }
+        // 投稿が完了したらホーム画面に戻る
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
+
+
+extension CreateNewPostViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        // ユーザー名が空欄じゃない場合＝true、空欄の場合＝false (スペースと改行が空欄と見做す)
+        if userNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
+            userNameHasText = true
+        } else {
+            userNameHasText = false
+        }
+        
+        switchPostButton()
+    }
+}
+
+extension CreateNewPostViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        // 投稿文が空欄じゃない場合＝true、空欄の場合＝false (スペースと改行が空欄と見做す)
+        if postTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
+            postTextHasText = true
+        } else {
+            postTextHasText = false
+        }
+        
+        switchPostButton()
+    }
+}
